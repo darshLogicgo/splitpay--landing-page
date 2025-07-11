@@ -1,0 +1,303 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+.up-down-animation {
+  animation: up-down-animation 1.5s infinite alternate ease-in;
+}
+
+@keyframes up-down-animation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-25px);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.swiper-pagination-custom {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.swiper-pagination-bullet {
+  width: 40px;
+  height: 12px;
+  border-radius: 9999px;
+  background-color: rgba(33, 71, 168, 0.3); /* light blue */
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #2147a8; /* active blue */
+  opacity: 1;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+/* 👇 Responsive size adjustment for mobile */
+@media (max-width: 640px) {
+  .swiper-pagination-bullet {
+    width: 20px;
+    height: 8px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.animate-float {
+  animation: float 2.5s ease-in-out infinite;
+}
+
+
+/* --------------------- Blog HTML Content Styling --------------------- */
+.blog-content {
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: hsl(220 30% 15%);
+  /* padding: 1rem; */
+  word-wrap: break-word;
+}
+
+/* Headings */
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 1.5rem 0 0.75rem;
+  color: hsl(220 30% 15%);
+}
+
+.blog-content h1 {
+  font-size: 1.75rem;
+}
+.blog-content h2 {
+  font-size: 1.5rem;
+}
+.blog-content h3 {
+  font-size: 1.25rem;
+}
+.blog-content h4 {
+  font-size: 1.125rem;
+}
+.blog-content h5 {
+  font-size: 1rem;
+}
+.blog-content h6 {
+  font-size: 0.95rem;
+}
+
+/* Paragraphs */
+.blog-content p {
+  margin-bottom: 0.9rem;
+}
+
+/* Lists */
+.blog-content ul,
+.blog-content ol {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.blog-content ul li,
+.blog-content ol li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  color: hsl(220 20% 30%);
+}
+
+.blog-content ul {
+  list-style-type: disc;
+}
+.blog-content ol {
+  list-style-type: decimal;
+}
+
+/* Strong */
+.blog-content strong {
+  font-weight: 600;
+}
+
+/* Images */
+.blog-content img {
+  margin: 1.5rem 0;
+  border-radius: 6px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Links */
+.blog-content a {
+  color: hsl(220 90% 50%);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+  font-weight: 500;
+}
+
+.blog-content a:hover {
+  color: hsl(220 90% 40%);
+  text-decoration: none;
+}
+
+/* 🧠 Responsive typography with media queries */
+@media (max-width: 1024px) {
+  .blog-content h1 {
+    font-size: 1.6rem;
+  }
+  .blog-content h2 {
+    font-size: 1.4rem;
+  }
+  .blog-content h3 {
+    font-size: 1.2rem;
+  }
+  .blog-content h4 {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-content {
+    font-size: 0.95rem;
+    padding: 0rem;
+  }
+  .blog-content h1 {
+    font-size: 1.4rem;
+  }
+  .blog-content h2 {
+    font-size: 1.25rem;
+  }
+  .blog-content h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-content {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+  .blog-content h1 {
+    font-size: 1.25rem;
+  }
+  .blog-content h2 {
+    font-size: 1.15rem;
+  }
+  .blog-content h3 {
+    font-size: 1rem;
+  }
+}
