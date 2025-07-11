@@ -33,7 +33,7 @@ import {
 } from "@/components/ui/accordion";
 import playStore from "../public/playstoreButton.webp";
 import appStore from "../public/appleButton.webp";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export const reviews = [
   {
@@ -99,7 +99,6 @@ export const reviews = [
 ];
 
 export default function SplitPayLanding() {
-  const searchParams = useSearchParams();
   const router = useRouter();
 
   useEffect(() => {
